@@ -7,23 +7,30 @@
     <style>
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://cdn.discordapp.com/attachments/1278787140406345840/1293269113782931456/preview-christmas-home-decorations-dark-background-1701853859.jpg?ex=6706c238&is=670570b8&hm=795e5db66004bf429d725f9228e08517beb5026256b3d9711356f30e8af5be78&'); /* Gantikan dengan URL background sebenar */
-    background-size: cover;
-    color: #fff;
     margin: 0;
     padding: 0;
-    font-size: 16px; /* tambahan */
+    font-size: 16px;
+    color: #fff;
+}
+
+video#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
 }
 
 header {
     text-align: center;
-    padding: 2em; /* ubah dari 20px ke 2em */
+    padding: 2em;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 h1 {
     margin: 0;
-    font-size: 2em; /* tambahan */
+    font-size: 2em;
 }
 
 .products {
@@ -33,8 +40,8 @@ h1 {
 }
 
 .product {
-  margin: 1.5em; /* adjust the margin to create a responsive grid */
-  width: calc(25% - 3em); /* adjust the width to create a responsive grid */
+  margin: 1.5em;
+  width: calc(25% - 3em);
   background: rgba(255, 255, 255, 0.2);
   border-radius: 1em;
   padding: 20px;
@@ -48,16 +55,16 @@ h1 {
 }
 
 .button {
-    padding: 1em 2em; /* ubah dari 10px 20px ke 1em 2em */
+    padding: 1em 2em;
     border: none;
-    border-radius: 0.5em; /* ubah dari 5px ke 0.5em */
+    border-radius: 0.5em;
     cursor: pointer;
-    font-size: 1em; /* tambahan */
-    margin: 1em; /* ubah dari 10px ke 1em */
+    font-size: 1em;
+    margin: 1em;
 }
 
 .add-to-cart {
-    background-color: orange; /* Atau kuning */
+    background-color: orange;
     color: #000;
 }
 
@@ -68,36 +75,38 @@ h1 {
 
 .cart {
     position: fixed;
-    top: 2em; /* ubah dari 20px ke 2em */
-    right: 2em; /* ubah dari 20px ke 2em */
+    top: 2em;
+    right: 2em;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 1.5em; /* ubah dari 15px ke 1.5em */
-    border-radius: 1em; /* ubah dari 10px ke 1em */
+    padding: 1.5em;
+    border-radius: 1em;
 }
 
 /* Media queries for responsive design */
-
-/* For screens smaller than 768px */
 @media (max-width: 768px) {
   .product {
     width: calc(50% - 3em);
   }
 }
 
-/* For screens smaller than 480px */
 @media (max-width: 480px) {
   .product {
     width: calc(100% - 3em);
   }
 }
-
     </style>
 </head>
 <body>
 
+<!-- Video Background -->
+<video autoplay muted loop id="background-video">
+  <source src="https://youtu.be/GWaQiFeQ87g?si=bUuAj_NYMua9wowc" type="video/mp4"> <!-- Gantikan URL_TO_YOUR_VIDEO.mp4 dengan URL sebenar -->
+  Your browser does not support the video tag.
+</video>
+
 <header>
     <h1>Selamat Datang Lynnn Shop</h1>
-    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266613797261375/IMG-20241009-WA0029.jpg?ex=6706bfe4&is=67056e64&hm=8d36a6328f7b72c8be4c8f20607a5d73e52654efb0be70d8e7d194005e886a45&" alt="Lynnn Shop Logo" style="width: 150px;"> <!-- Gantikan dengan URL logo kedai anda -->
+    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266613797261375/IMG-20241009-WA0029.jpg" alt="Lynnn Shop Logo" style="width: 150px;">
 </header>
 
 <div class="cart">
@@ -109,7 +118,7 @@ h1 {
 <div class="products">
     <div class="product horizontal">
       <h2>Popia Bergedil</h2>
-      <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071523950794/IMG-20241009-WA0026.jpg?ex=6706bf63&is=67056de3&hm=e43f2e757e787f5fd5e51c877e03dedea030c640993a08e756c5d48b164c111c&">
+      <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071523950794/IMG-20241009-WA0026.jpg">
       <label>
         <input type="radio" name="variation" value="Ayam" checked> Ayam RM5.00/6pcs
       </label>
@@ -120,58 +129,61 @@ h1 {
       <input type="number" id="quantity" value="1" min="1" max="10">
       <button class="button add-to-cart" onclick="addToCart('Popia Bergedil', document.querySelector('input[name=variation]:checked').value, 5, document.getElementById('quantity').value)">Add to Cart</button>
     </div>
-    <div class="product horizontal">
-      <h2>Tauhu Bergedil</h2>
-      <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071939453030/IMG-20241009-WA0025.jpg?ex=6706bf63&is=67056de3&hm=3ba9bf3e8df5326048111891ad30447a962b6669fd693dd65a33ecef674f6e90&" alt="Tauhu Bergedil">
-      <br>
-      <label>
-        <input type="radio" name="variation" value="Standard" checked> Per Pax/4pcs Rm5.00
-      </label>
-      <input type="number" class="quantity" value="1" min="1" max="10">
-      <button class="button add-to-cart" onclick="addToCart('Tauhu Bergedil', this.parentNode.querySelector('input[name=variation]:checked').value, 5, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
-    </div>
-    <div class="product horizontal">
-      <h2>Chocojar Unicorn</h2>
-      <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072299896884/IMG-20241009-WA0019.jpg?ex=6706bf63&is=67056de3&hm=b0ff87e77bbc919803614479d1ec1522729794ce4e9a930f9ba4f80f8f7b945e&" alt="Chocojar Unicorn">
-      <br>
-      <label>
-        <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
-      </label>
-      <input type="number" class="quantity" value="1" min="1" max="10">
-      <button class="button add-to-cart" onclick="addToCart('Chocojar Unicorn', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
-    </div>
-    <div class="product horizontal">
-      <h2>Chocojar Coklat</h2>
-      <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072618799209/IMG-20241009-WA0022.jpg?ex=6706bf63&is=67056de3&hm=3004b720c92a06b48c1cb4ea63227e6e70b7b746cbf9541f64c96a5a32ceedcc&" alt="Chocojar Coklat">
-      <br>
-      <label>
-        <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
-      </label>
-      <input type="number" class="quantity" value="1" min="1" max="10">
-      <button class="button add-to-cart" onclick="addToCart('Chocojar Coklat', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
-    </div>
-    <div class="product horizontal">
-      <h2>Chocojar Susu/White </h2>
-    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072941629531/IMG-20241009-WA0020.jpg?ex=6706bf63&is=67056de3&hm=2510672adf649c11937d356998a4a24a5950b910abcb450ceb823fc7e1d4fcc4&" alt="Chocojar Susu">
-    <br>
-      <label>
-        <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
-      </label>
-      <input type="number" class="quantity" value="1" min="1" max="10">
-      <button class="button add-to-cart" onclick="addToCart('Chocojar Susu/White', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
-    </div>
-  
-  <div class="product horizontal">
-    <h2>Kuih Cekmek</h2>
-    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266073214386226/IMG-20241009-WA0024.jpg?ex=67076823&is=670616a3&hm=c72d18237493270a111cec9a48da98d041dec0f7a5cce52076d5d402bb5efb1a&" alt="Kuih Cekmek"> 
-    <br>
-      <label>
-        <input type="radio" name="variation" value="Standard" checked> Rm5.00 Per Pax
-      </label>
-      <input type="number" class="quantity" value="1" min="1" max="10">
-      <button class="button add-to-cart" onclick="addToCart('Kuih Cekmek', this.parentNode.querySelector('input[name=variation]:checked').value, 5, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
-    </div>
+    <!-- Tambahkan produk lain di sini -->
   </div>
+  <div class="product horizontal">
+    <h2>Tauhu Bergedil</h2>
+    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266071939453030/IMG-20241009-WA0025.jpg?ex=6706bf63&is=67056de3&hm=3ba9bf3e8df5326048111891ad30447a962b6669fd693dd65a33ecef674f6e90&" alt="Tauhu Bergedil">
+    <br>
+    <label>
+      <input type="radio" name="variation" value="Standard" checked> Per Pax/4pcs Rm5.00
+    </label>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <button class="button add-to-cart" onclick="addToCart('Tauhu Bergedil', this.parentNode.querySelector('input[name=variation]:checked').value, 5, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
+  </div>
+  <div class="product horizontal">
+    <h2>Chocojar Unicorn</h2>
+    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072299896884/IMG-20241009-WA0019.jpg?ex=6706bf63&is=67056de3&hm=b0ff87e77bbc919803614479d1ec1522729794ce4e9a930f9ba4f80f8f7b945e&" alt="Chocojar Unicorn">
+    <br>
+    <label>
+      <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
+    </label>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <button class="button add-to-cart" onclick="addToCart('Chocojar Unicorn', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
+  </div>
+  <div class="product horizontal">
+    <h2>Chocojar Coklat</h2>
+    <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072618799209/IMG-20241009-WA0022.jpg?ex=6706bf63&is=67056de3&hm=3004b720c92a06b48c1cb4ea63227e6e70b7b746cbf9541f64c96a5a32ceedcc&" alt="Chocojar Coklat">
+    <br>
+    <label>
+      <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
+    </label>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <button class="button add-to-cart" onclick="addToCart('Chocojar Coklat', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
+  </div>
+  <div class="product horizontal">
+    <h2>Chocojar Susu/White </h2>
+  <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266072941629531/IMG-20241009-WA0020.jpg?ex=6706bf63&is=67056de3&hm=2510672adf649c11937d356998a4a24a5950b910abcb450ceb823fc7e1d4fcc4&" alt="Chocojar Susu">
+  <br>
+    <label>
+      <input type="radio" name="variation" value="Standard" checked> Mini Rm3.00
+    </label>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <button class="button add-to-cart" onclick="addToCart('Chocojar Susu/White', this.parentNode.querySelector('input[name=variation]:checked').value, 3, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
+  </div>
+
+<div class="product horizontal">
+  <h2>Kuih Cekmek</h2>
+  <img src="https://cdn.discordapp.com/attachments/1278787140406345840/1293266073214386226/IMG-20241009-WA0024.jpg?ex=6706bf63&is=67056de3&hm=f6e7be09132f0137d0ea8fd41f0d2b1c16f6bbe6c" alt="Kuih Cekmek"> 
+  <br>
+    <label>
+      <input type="radio" name="variation" value="Standard" checked> Rm5.00 Per Pax
+    </label>
+    <input type="number" class="quantity" value="1" min="1" max="10">
+    <button class="button add-to-cart" onclick="addToCart('Kuih Cekmek', this.parentNode.querySelector('input[name=variation]:checked').value, 5, this.parentNode.querySelector('.quantity').value)">Add to Cart</button>
+  </div>
+</div>
+
 <button class="button checkout" onclick="checkout()">Checkout</button>
 
 <script>
