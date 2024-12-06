@@ -1,177 +1,49 @@
-<html>
- <head>
-  <title>
-   Lynnn Shop
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        .header .logo {
-            margin-right: 20px;
-        }
-        .header .logo button {
-            background: none;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .header .title {
-            flex-grow: 1;
-            font-size: 24px;
-        }
-        .header .nav {
-            display: flex;
-            gap: 20px;
-        }
-        .header .nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .header .nav .add-button {
-            background: none;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .main {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-        .main img {
-            width: 100%;
-            height: auto;
-        }
-        .main .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .main .overlay .add-image-video {
-            background: none;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .main .overlay h1 {
-            font-size: 48px;
-            margin: 10px 0;
-        }
-        .main .overlay p {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .main .overlay .book-now {
-            background: #000;
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        .footer {
-            background-color: #f1c40f;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer .pro {
-            background: none;
-            border: none;
-            color: #000;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-        }
-        .footer .pro i {
-            margin-right: 5px;
-        }
-        .footer .controls {
-            display: flex;
-            gap: 10px;
-        }
-        .footer .controls button {
-            background: none;
-            border: 1px solid #000;
-            color: #000;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <div class="logo">
-    <button>
-     Add Logo
-    </button>
-   </div>
-   <div class="title">
-    Lynnn Shop
-   </div>
-   <div class="nav">
-    <a href="#">
-     Home
-    </a>
-    <a href="#">
-     Menu
-    </a>
-    <a href="#">
-     About Us
-    </a>
-    <a href="#">
-     Contact
-    </a>
-    <a href="#">
-     Reservations
-    </a>
-    <button class="add-button">
-     ADD BUTTON
-    </button>
-   </div>
-  </div>
-  <div class="main">
-   <img alt="Blurred image of people working in a kitchen" height="600" src="https://storage.googleapis.com/a1aa/image/w8S4gQbepJ2xDK4nK6zKjxaXpKIevicAEbfvBIrZQQfV6encC.jpg" width="1920"/>
-   <div class="overlay">
-    <button class="add-image-video">
-     ADD IMAGE/VIDEO
-    </button>
-    <p>
-     Your go-to spot for delicious food and quick bites
-    </p>
-    <h1>
-     Welcome to Lynnn Shop
-    </h1>
-    <!-- This button will link to product.html -->
-    <button class="book-now" onclick="window.location.href='product.html';">
-     Book Now
-    </button>
-   </div>
-  </div>
- </body>
-</html>
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynnn Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-green-500 p-4 text-white text-center">
+        <h1 class="text-3xl font-bold">Selamat Datang ke Lynnn Shop</h1>
+        <p class="text-xl">Makanan Sedia Untuk Dihantar ke Pintu Anda</p>
+    </header>
 
-  
+    <main class="container mx-auto p-6">
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Card Produk -->
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="https://via.placeholder.com/300" alt="Produk 1">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Nasi Lemak</div>
+                    <p class="text-gray-700 text-base">Harga: RM12.00</p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="addToCart('Nasi Lemak', 12.00)">Tambah ke Troli</button>
+                </div>
+            </div>
+            <!-- Produk lain boleh ditambah di sini -->
+        </section>
+
+        <!-- Cart & Checkout -->
+        <section id="cart" class="mt-8">
+            <h2 class="text-2xl font-bold">Troli Anda</h2>
+            <div id="cart-items" class="mt-4"></div>
+            <div class="mt-4 flex justify-between">
+                <span class="font-bold">Cas COD: RM4.00</span>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="goToCheckout()">Ke Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2024 Lynnn Shop</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
