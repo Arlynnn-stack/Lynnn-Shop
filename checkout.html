@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Lynnn Shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-green-500 p-4 text-white text-center">
+        <h1 class="text-3xl font-bold">Checkout</h1>
+        <p class="text-xl">Sila masukkan alamat penghantaran anda</p>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <form class="bg-white p-6 rounded shadow-lg" id="checkout-form">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-bold mb-2">Nama</label>
+                <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="address" class="block text-gray-700 font-bold mb-2">Alamat Penghantaran</label>
+                <textarea id="address" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-bold mb-2">Nombor Telefon</label>
+                <input type="tel" id="phone" class="w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Hantar Pesanan</button>
+        </form>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-6">
+        <p>&copy; 2024 Lynnn Shop</p>
+    </footer>
+
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            alert(`Pesanan anda telah diterima!\nNama: ${name}\nAlamat: ${address}\nTelefon: ${phone}`);
+            // Kirim data ke server atau sistem untuk diproses (e.g., simpan di database atau kirim email).
+        });
+    </script>
+</body>
+</html>
